@@ -1,0 +1,45 @@
+.sleepy-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.sleepy-overlay > .sleepy-modal img {
+    height: 400px;
+
+}
+
+.sleepy-modal {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 250px;
+    width: 400px;
+    z-index: 11;
+    padding: 5px 10px;
+}
+
+.sleepy-content {
+    padding: 15px 10px;
+    background: #eee;
+    height: 142px;
+    margin: 10px auto;
+}
+
+.sleepy-modal > form {
+    position: relative;
+    top: -101px;
+    left: 140px;
+}
+
+/*@media only screen and (min-width: 40.063em) {*/
+
+/*.sleepy-message .sleepy-mobile-only {*/
+/*display: none;*/
+/*}*/
+/*}*/
