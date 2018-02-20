@@ -14,6 +14,9 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
       integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
 <script src="http://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
@@ -38,11 +41,25 @@
 
     <div class="sleepy-overlay">
         <div class="sleepy-modal">
-            <img src="img/pop_up_amira.png" alt="">
-            <form action="">
-                <input type="email" name="email">
-                <button type="button">></button>
-            </form>
+            <button type="button" class="btn" id="exit-popup">
+                <span><i class="fas fa-times-circle"></i></span>
+            </button>
+            <div id="">
+                <div id="step-1" class="step">
+                    <img src="img/pop_up_chat_1.png" id="pop-up-1" alt="">
+                    <form action="">
+                        <input type="email" name="email" placeholder="Masukan email Kamu disini">
+                        <button type="button" id="pop-submit" class="btn">
+                            <span>
+                            <i class="fas fa-chevron-circle-right"></i>
+                            </span>
+                        </button>
+                    </form>
+                </div>
+                <div id="step-2" class="step">
+                    <img src="img/pop_up_chat_2.png" alt="">
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -163,7 +180,7 @@
 <script>
     $(function () {
         for (var i = 1; i <= 50; i++) {
-            document.getElementById("text").innerHTML += "<p>this is text "+ i +"</p>"
+            document.getElementById("text").innerHTML += "<p>this is text " + i + "</p>"
         }
     })
 </script>
