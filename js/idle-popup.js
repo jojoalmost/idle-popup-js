@@ -65,16 +65,32 @@ function sleepPopup() {
         data.push({name: 'action', value: 'pop_up'});
         $.ajax({
             type: 'POST',
-            url: 'http://activecampaign.beon.co.id/livechat/v1/',
+            url: 'https://activecampaign.beon.co.id/livechat/v1/',
             data: data,
             success: function (res) {
                 console.dir(res);
-                setCookie('visit', 'visited', 10);
-                console.log('forn submit expired 10 day');
-                $('#step-1').hide().remove();
-                $('#pop-up-2').show();
-                submit = true;
-                idleTime = 0;
+                if (res.status === 0) {
+                    var messages = $.map(res.message, function (v) {
+                        return v;
+                    }).join(', ');
+
+                    $("#popup-email").tooltip({
+                        animation: "fade",
+                        delay: "200",
+                        trigger: "manual",
+                        placement: "top",
+                        title: messages
+                    });
+                    $("#popup-email").tooltip('show');
+                } else {
+                    setCookie('visit', 'visited', 10);
+                    // console.log('form submit expired 10 day');
+                    $('#step-1').hide();
+                    $('#step-1').remove();
+                    $('#pop-up-2').show();
+                    submit = true;
+                    idleTime = 0
+                }
             }
         })
     })
