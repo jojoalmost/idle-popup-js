@@ -59,7 +59,8 @@ function sleepPopup() {
      idleTime = 0;
      });*/
 
-    $('#pop-submit').click(function () {
+    $('#form-popup').submit(function (event ) {
+        event.preventDefault();
         var data = [];
         data = $(this).closest('form').serializeArray();
         data.push({name: 'action', value: 'pop_up'});
